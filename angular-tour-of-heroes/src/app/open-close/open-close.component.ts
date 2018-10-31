@@ -22,12 +22,12 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
         backgroundColor: 'green'
       })),
 
-      // transition('open => closed', [
-      //   animate('1000s')
-      // ]),
+      transition('open => closed', [
+        animate('5s')
+      ]),
 
       transition('closed => open', [
-        animate('0.5s')
+        animate('1s')
       ])
 
     ]),
