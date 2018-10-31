@@ -6,9 +6,12 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
+
     // animation triggers go here
+
   ]
 })
 export class AppComponent {
   title = 'GO A1018 ';
+
 }
