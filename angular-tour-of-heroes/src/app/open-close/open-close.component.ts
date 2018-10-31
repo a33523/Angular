@@ -9,6 +9,7 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
 
     // animation triggers go here
     trigger('openClose', [
+
       state('open', style({
         height: '150px',
         opacity: 1,
@@ -21,29 +22,32 @@ import { trigger, state, style, animate, transition, } from '@angular/animations
         backgroundColor: 'green'
       })),
 
-      transition('open => closed', [
-        animate('1000s')
-      ]),
+      // transition('open => closed', [
+      //   animate('1000s')
+      // ]),
 
       transition('closed => open', [
         animate('0.5s')
       ])
 
-    ])
+    ]),
   ]
 })
 export class OpenCloseComponent implements OnInit {
 
+
+  isOpen = false;
   constructor() { }
 
   ngOnInit() {
-  }
 
-  isOpen = true;
+
+  }
 
 
   toggle() {
-    this.isOpen != this.isOpen;
+    this.isOpen = !this.isOpen;
+    return console.log(this.isOpen);
   }
 
 

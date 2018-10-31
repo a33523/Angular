@@ -1,6 +1,10 @@
 <p>
   open-close works!
 </p>
-<div [@openClose]="isOpen ? 'open' : 'closed'" >
+<nav><button (click)="toggle()">toggle</button></nav>
+
+
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="app-open-close">
   <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+
 </div>
