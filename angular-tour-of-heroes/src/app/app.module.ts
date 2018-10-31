@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 /**
  *  NgModel lives here
  */
@@ -68,8 +67,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
  * @export
  * @class AppModule
  */
-  bootstrap: [AppComponent],
-  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
+  bootstrap: [AppComponent]
+
 
 })
 export class AppModule { }

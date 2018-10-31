@@ -1,15 +1,11 @@
 
-  <h3>Countdown to Liftoff (via local variable)</h3>
-  <button (click)="start()">Start</button>
-  <button (click)="stop()">Stop</button>
-  <p></p>
-  <div class="seconds">{{seconds()}}</div>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
 
-<app-dashboard></app-dashboard>
-
-<div class="ad-banner">
-  <h3>Advertisements</h3>
-  <ng-template ad-host></ng-template>
-</div>
-
-
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
