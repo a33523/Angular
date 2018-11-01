@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { trigger, state, style, animate, transition, } from '@angular/animations';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',

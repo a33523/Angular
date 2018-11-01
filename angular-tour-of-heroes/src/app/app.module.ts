@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-/**
- *  NgModel lives here
- */
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-import { HttpClientModule }    from '@angular/common/http';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
+import { ReactiveFavoriteColorComponent } from './reactive-favorite-color/reactive-favorite-color.component';
+import { TemplateFavoriteColorComponent } from './template-favorite-color/template-favorite-color.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
 
@@ -34,6 +37,10 @@ import { OpenCloseComponent } from './open-close/open-close.component';
     DashboardComponent,
     HeroSearchComponent,
     OpenCloseComponent,
+    ReactiveFavoriteColorComponent,
+    TemplateFavoriteColorComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
 
   ],
 
@@ -49,6 +56,7 @@ import { OpenCloseComponent } from './open-close/open-close.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
