@@ -43,7 +43,7 @@ export class ProfileEditorComponent implements OnInit {
     this.profileForm.patchValue({
       firstName: 'Nancy',
       address: {
-        street: '123 Drew Street'
+        street: '123 Drew     Street'
       }
     });
   }
