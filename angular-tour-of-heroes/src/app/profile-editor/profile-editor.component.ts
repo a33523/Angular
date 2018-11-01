@@ -6,14 +6,25 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './profile-editor.component.html',
   styleUrls: ['./profile-editor.component.css']
 })
-export class ProfileEditorComponent {
+export class ProfileEditorComponent implements OnInit{
+  constructor() { }
 
+  ngOnInit() {
+  }
 
 
   //追蹤一組FormControl的值與有效性狀態，假若組中的任一控件無效，那這整組就無效。
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
+
+    //多一個FormGroup的子控件
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
   });
 
 
