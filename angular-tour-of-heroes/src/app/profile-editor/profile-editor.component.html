@@ -1,3 +1,17 @@
-<p>
-  profile-editor works!
-</p>
+<!-- 發出一個ngSubmit事件，並綁定回傳的函數  -->
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
+
