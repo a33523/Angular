@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl,FormBuilder,Validators,FormArray  } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -18,7 +18,8 @@ export class ProfileEditorComponent implements OnInit {
 
   //追蹤一組FormControl的值與有效性狀態，假若組中的任一控件無效，那這整組就無效。
   profileForm = this.ab.group({
-    firstName: [''],
+    //用到Validators方法裡的required驗證器要求此控件具有非空值。
+    firstName: ['',Validators.required],
     lastName: [''],
     address: this.ab.group({
       street: [''],
@@ -26,6 +27,10 @@ export class ProfileEditorComponent implements OnInit {
       state: [''],
       zip: ['']
     }),
+    //FormArray會聚合數組中每個表單控件的值，最後回傳一個子控件構成的陣列。
+    aliases: this.ab.array([
+      this.ab.control('')
+    ])
   });
 
 
@@ -43,6 +48,16 @@ export class ProfileEditorComponent implements OnInit {
         street: '123 Drew     Street'
       }
     });
+  }
+
+  get aliases() {
+    //get 會指定控件的名稱或路徑來取得值。
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    //會在數組最後加上一個新的control
+    this.aliases.push(this.ab.control(''));
   }
 
 }
