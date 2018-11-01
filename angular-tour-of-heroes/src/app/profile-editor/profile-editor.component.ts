@@ -9,8 +9,7 @@ import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 export class ProfileEditorComponent implements OnInit {
 
 
-  //FormBuilder 是一個服務元件，
-  //讓使用者自行創件表單而非初始就建立，簡化建構程式的樣板量。
+  //FormBuilder 是一個服務元件，讓表單有自動生成的效果。
   constructor(private ab: FormBuilder) { }
 
   ngOnInit() {
@@ -18,17 +17,15 @@ export class ProfileEditorComponent implements OnInit {
 
 
   //追蹤一組FormControl的值與有效性狀態，假若組中的任一控件無效，那這整組就無效。
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-
-    //多一個FormGroup的子控件
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
-    })
+  profileForm = this.ab.group({
+    firstName: [''],
+    lastName: [''],
+    address: this.ab.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
   });
 
 
